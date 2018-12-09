@@ -563,9 +563,9 @@ var pwn = function() {
     }
 
     if (!useFastPermisionsJITCopy || jitWriteSeparateHeapsFunction) {
-        modern_execution();
-    } else {
         legacy_execution();
+    } else {
+        modern_execution();
          if(verbosity >= VERBOSITY.DEFAULT) {
             print('EmptyList is started, please close all background apps then dismiss this alert.');    
         }
